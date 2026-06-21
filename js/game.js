@@ -262,7 +262,7 @@
     let timeoutId = setTimeout(() => {
       msg.style.display = 'none';
       err.style.display = 'block';
-    }, 15000);
+    }, 30000);
 
     const onPlayerReady = (player) => {
       let fallbackId = setTimeout(() => {
