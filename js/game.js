@@ -289,6 +289,11 @@
       player.seekTo(targetTime || 0, true);
       player.playVideo();
 
+      // If it's already playing (or starts instantly), hide overlay immediately
+      if (player.getPlayerState() === YT.PlayerState.PLAYING) {
+        player.onStateChangeCb({ data: YT.PlayerState.PLAYING });
+      }
+
       retryBtn.onclick = () => {
         clearTimeout(timeoutId);
         clearTimeout(fallbackId);
